@@ -40,6 +40,19 @@ var app = {
  
 checkConnection();
         
+        
+        document.addEventListener("offline", onOffline, false);
+ 
+function onOffline() {
+alert('Off');
+}
+        
+        document.addEventListener("online", onOnline, false);
+ 
+function onOnline() {
+alert('ON');
+}
+        
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
