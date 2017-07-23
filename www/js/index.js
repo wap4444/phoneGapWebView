@@ -9,6 +9,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("offline", onOfflineEvent, false);
     },
     // deviceready Event Handler
     //
@@ -16,9 +17,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        document.addEventListener("offline", onOffline, false);
+
     },
-function onOffline() {
+function onOfflineEvent() {
 alert("Off");
 },
     // Update DOM on a Received Event
