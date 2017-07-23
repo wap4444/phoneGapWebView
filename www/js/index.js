@@ -30,7 +30,5 @@ var app = {
 
         console.log('Received Event: ' + id);
     },
-function onOfflineEvent() {
-alert("Off");
-}
+
 };
