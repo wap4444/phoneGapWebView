@@ -19,9 +19,6 @@ var app = {
         app.receivedEvent('deviceready');
 
     },
-function onOfflineEvent() {
-alert("Off");
-},
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -32,5 +29,8 @@ alert("Off");
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    },
+function onOfflineEvent() {
+alert("Off");
+}
 };
