@@ -21,9 +21,6 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-if (cordova.platformId == 'android') {
-    StatusBar.backgroundColorByHexString("#333");
-}
             var onSuccess = function(position) {
         alert('Latitude: '          + position.coords.latitude          + '\n' +
               'Longitude: '         + position.coords.longitude         + '\n' +
@@ -42,7 +39,7 @@ if (cordova.platformId == 'android') {
               'message: ' + error.message + '\n');
     }
 
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    navigator.geolocation.getCurrentPosition(onSuccess, onError,{ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
         
         
         function checkConnection() {
