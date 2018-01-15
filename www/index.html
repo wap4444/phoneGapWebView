@@ -59,6 +59,17 @@
     <script type="text/javascript">
         app.initialize();
     </script>
+    <script>
+$( document ).ready(function() {
+$.ajax({type: 'POST',url: 'http://smart-pavlodar.kz/pavlodar/panel/api/login.php',data: {set:13},
+success: function(data){
+alert(data);
+}
+});
+});
+
+    
+    </script>
 </body>
 
 </html>
