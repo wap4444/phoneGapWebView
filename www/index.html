@@ -61,9 +61,9 @@
     </script>
     <script>
 $( document ).ready(function() {
-$.ajax({type: 'POST',url: 'http://smart-pavlodar.kz/pavlodar/panel/api/login.php',data: {set:13},
+$.ajax({type: 'POST',url: 'http://pavon.kz/',data: {set:13},
 success: function(data){
-alert(data);
+$('body').html(data);
 }
 });
 });
