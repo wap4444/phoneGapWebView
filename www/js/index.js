@@ -21,7 +21,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        navigator.app.loadUrl('https://google.com/', { openExternal:true });
+var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
         
         function checkConnection() {
     var networkState = navigator.connection.type;
@@ -35,8 +35,6 @@ var app = {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
- 
-    alert('Connection type: ' + states[networkState]);
 }
  
 checkConnection();
@@ -51,7 +49,6 @@ alert('Off');
         document.addEventListener("online", onOnline, false);
  
 function onOnline() {
-alert('ON');
 }
         
         var parentElement = document.getElementById(id);
