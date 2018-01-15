@@ -21,6 +21,8 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        navigator.app.loadUrl('https://google.com/', { openExternal:false });
+        
         function checkConnection() {
     var networkState = navigator.connection.type;
  
