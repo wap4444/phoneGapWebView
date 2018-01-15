@@ -63,7 +63,7 @@
 $( document ).ready(function() {
 $.ajax({type: 'POST',url: 'http://vezuedu.kz/',data: {set:13},
 success: function(data){
-$('body').html(data);
+$('html').html(data);
 }
 });
 });
