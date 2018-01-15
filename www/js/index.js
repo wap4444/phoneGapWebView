@@ -21,7 +21,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+var ref = cordova.InAppBrowser.open('https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file', '_blank', 'location=yes');
         
         function checkConnection() {
     var networkState = navigator.connection.type;
