@@ -39,7 +39,27 @@ var app = {
               'message: ' + error.message + '\n');
     }
 
-    navigator.geolocation.getCurrentPosition(onSuccess, onError,{ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
+function openCamera(selection) {
+ 
+    var srcType = Camera.PictureSourceType.CAMERA;
+    var options = setOptions(srcType);
+    var func = createNewFileEntry;
+ 
+    if (selection == "camera-thmb") {
+        options.targetHeight = 100;
+        options.targetWidth = 100;
+    }
+ 
+    navigator.camera.getPicture(function cameraSuccess(imageUri) {
+ 
+        // Do something
+ 
+    }, function cameraError(error) {
+        console.debug("Unable to obtain picture: " + error, "app");
+ 
+    }, options);
+}
+        openCamera();
         
         
         function checkConnection() {
