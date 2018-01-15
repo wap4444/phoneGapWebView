@@ -21,8 +21,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-var ref = cordova.InAppBrowser.open('https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file', '_blank', 'location=yes');
-        
+navigator.vibrate(3000);
         function checkConnection() {
     var networkState = navigator.connection.type;
  
