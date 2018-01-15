@@ -44,6 +44,7 @@
 
 <body>
     <div class="app">
+        <img id="myImage">
       <a href="http://google.com">  <h1>PhoneGap</h1></a>
         <div id="deviceready" class="blink">
             <p class="event listening">Connecting to Device</p>
@@ -61,11 +62,19 @@
     </script>
     <script>
 $( document ).ready(function() {
-$.ajax({type: 'POST',url: 'http://vezuedu.kz/',data: {set:13},
-success: function(data){
-$('html').html(data);
+    
+navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    destinationType: Camera.DestinationType.FILE_URI });
+
+function onSuccess(imageURI) {
+    var image = document.getElementById('myImage');
+    image.src = imageURI;
 }
-});
+
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+    
 });
 
     
