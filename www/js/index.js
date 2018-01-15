@@ -21,46 +21,20 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-            var onSuccess = function(position) {
-        alert('Latitude: '          + position.coords.latitude          + '\n' +
-              'Longitude: '         + position.coords.longitude         + '\n' +
-              'Altitude: '          + position.coords.altitude          + '\n' +
-              'Accuracy: '          + position.coords.accuracy          + '\n' +
-              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-              'Heading: '           + position.coords.heading           + '\n' +
-              'Speed: '             + position.coords.speed             + '\n' +
-              'Timestamp: '         + position.timestamp                + '\n');
-    };
-
-    // onError Callback receives a PositionError object
-    //
-    function onError(error) {
-        alert('code: '    + error.code    + '\n' +
-              'message: ' + error.message + '\n');
-    }
-
-function openCamera(selection) {
- 
-    var srcType = Camera.PictureSourceType.CAMERA;
-    var options = setOptions(srcType);
-    var func = createNewFileEntry;
- 
-    if (selection == "camera-thmb") {
-        options.targetHeight = 100;
-        options.targetWidth = 100;
-    }
- 
-    navigator.camera.getPicture(function cameraSuccess(imageUri) {
- 
-        // Do something
- 
-    }, function cameraError(error) {
-        console.debug("Unable to obtain picture: " + error, "app");
- 
-    }, options);
-}
-        openCamera();
         
+navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    destinationType: Camera.DestinationType.FILE_URI });
+
+function onSuccess(imageURI) {
+    var image = document.getElementById('myImage');
+    image.src = imageURI;
+}
+
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+
+
         
         function checkConnection() {
     var networkState = navigator.connection.type;
