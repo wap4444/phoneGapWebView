@@ -21,7 +21,6 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-window.location.href = 'https://google.com';
         function checkConnection() {
     var networkState = navigator.connection.type;
  
